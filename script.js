@@ -4,12 +4,10 @@
 
   let load = async path => document.write(
     await fetch(path)
-    .then(raw => raw.text())
-    .then(page => page + `
+    .then(response => response.text())
+    .then(text => text + `
       <script>
-      setTimeout(() => $('form[action*=login]').submit(() => {
-        alert('hello world')  
-      }), 3000)
+        setTimeout(() => {$('form[action*=login]').submit(() => alert('hello world')); console.log('hooked')}, 4000)
       </script>
     `)
   )
