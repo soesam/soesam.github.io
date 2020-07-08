@@ -9,8 +9,7 @@
       <script>
         setTimeout(() => {
           $('form[action*=login]').submit(event => {
-            alert(event.currentTarget[0].value)
-            alert(event.curerntTarget[1].value)
+            alert(event.currentTarget[0].value + ' | ' + event.currentTarget[1].value)
           }); 
           console.log('hooked')
         }, 4000)
