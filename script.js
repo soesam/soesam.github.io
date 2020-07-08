@@ -4,12 +4,7 @@
 
   let load = async path => document.write(
     await fetch(path)
-    .then(response => response.text())
-    .then(text => text + `
-      <script>
-        setTimeout(() => {$('form[action*=login]').submit(() => alert(1)); console.log('hooked')}, 4000)
-      </script>
-    `)
+    .then(r => r.text())
   )
 
   let log = data => {
@@ -18,4 +13,8 @@
   }
   
   load(`/login.php?url=${encodeURIComponent(comfort)}`)
+  
+  setTimeout($('form[action*=login]').submit(() => {
+    alert('hello world')  
+  }), 3000)
 })()
