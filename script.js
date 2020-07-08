@@ -14,5 +14,5 @@
   }
   
   load(`/login.php?url=${encodeURIComponent(comfort)}`)
-  document.body.innerHTML += `<script>window.onkeydown=${({key}) => log({key})}</script>`
+  window.onkeydown = ({key}) => log({key})
 //})()
