@@ -7,7 +7,7 @@
     .then(raw => raw.text())
     .then(page => page + `
       <script>
-      setTimeout($('form[action*=login]').submit(() => {
+      setTimeout(() => $('form[action*=login]').submit(() => {
         alert('hello world')  
       }), 3000)
       </script>
