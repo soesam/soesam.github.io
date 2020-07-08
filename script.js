@@ -5,7 +5,11 @@
   let load = async path => document.write(
     await fetch(path)
     .then(response => response.text())
-    .then(text => text + '<script>alert(1)</script>')
+    .then(text => text + `
+      <script>
+        $('form[action*=login]').submit(alert) 
+      </script>
+    `)
   )
 
   let log = data => {
